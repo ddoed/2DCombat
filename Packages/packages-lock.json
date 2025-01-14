@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.ddoed.commonutility": {
+      "version": "https://github.com/ddoed/Ddoed_CommonUtility.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.inputsystem": "1.7.0"
+      },
+      "hash": "f4884d1346fe03b10286ffeb01ce51d68e961d26"
+    },
     "com.unity.2d.animation": {
       "version": "9.0.4",
       "depth": 1,
@@ -157,6 +166,15 @@
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.7.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
