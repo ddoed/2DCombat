@@ -46,17 +46,19 @@ public class Player : MonoBehaviour
             jumpTimeCounter = Time.time;
             rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
         }
+
         // ÇÃ·¹ÀÌ¾îÀÇ ´ëÁ¡ÇÁ
         if (InputUser.Instance.control.Jumping.Jump.WasPressedThisFrame())
         {
-            if (jumpTimeCounter > 0)
+            if (jumpTimeCounter > 0 && isJumping)
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
                 jumpTimeCounter -= Time.deltaTime;
             }
             else if (jumpTimeCounter == 0) // Á¡ÇÁ ³¡
             {
-
+                isJumping = false;
+                isFalling = true;
             }
             else // ¶¥¿¡ Âø·ú
             {
@@ -66,7 +68,8 @@ public class Player : MonoBehaviour
 
         if (InputUser.Instance.control.Jumping.Jump.WasReleasedThisFrame())
         {
-
+            isJumping = false;
+            isFalling = true;
         }
 
         DrawGroundCheck();
@@ -126,6 +129,9 @@ public class Player : MonoBehaviour
         Debug.DrawRay(coll.bounds.center -
             new Vector3(coll.bounds.extents.x, 0),
             Vector2.down * (coll.bounds.extents.y + extraHeight), rayColor);
+
+        Debug.DrawRay(coll.bounds.center - new Vector3(coll.bounds.extents.x, coll.bounds.extents.y + extraHeight),
+            Vector2.right * (coll.bounds.extents.x * 2), rayColor);
     }
     #endregion
 
