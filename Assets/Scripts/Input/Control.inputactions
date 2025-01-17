@@ -155,6 +155,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Attack",
+            "id": "0ab863d4-7631-4fd0-a621-166aaf889cae",
+            "actions": [
+                {
+                    "name": "MeleeAttack",
+                    "type": "PassThrough",
+                    "id": "53c1a3fc-3432-43ef-a089-67a66e4de2fb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bef8b8df-bf65-4820-b274-4a14f6f91415",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MeleeAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
