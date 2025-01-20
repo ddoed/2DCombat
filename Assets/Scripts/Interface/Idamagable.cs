@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface Idamagable
 {
+    public bool HasTakenDamage { get; set; }
     public int CurrentHealth { get;set; }
     public int MaxHealth { get;set; }
 

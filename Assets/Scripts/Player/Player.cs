@@ -43,12 +43,12 @@ public class Player : MonoBehaviour
         if (InputUser.Instance.control.Jumping.Jump.WasPerformedThisFrame() && IsGrounded())
         {
             isJumping = true;
-            jumpTimeCounter = Time.time;
+            jumpTimeCounter = jumpTime;
             rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
         }
 
         // 플레이어의 대점프
-        if (InputUser.Instance.control.Jumping.Jump.WasPressedThisFrame())
+        if (InputUser.Instance.control.Jumping.Jump.IsPressed())
         {
             if (jumpTimeCounter > 0 && isJumping)
             {
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                return true;
+                return false;
             }
         }
         else

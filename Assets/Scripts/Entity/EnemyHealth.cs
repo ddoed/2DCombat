@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour, Idamagable
     [field: SerializeField] public int CurrentHealth { get; set; }
     [field:SerializeField] public int MaxHealth { get; set; } = 3;
 
+    public bool HasTakenDamage { get; set; }
+
     private void Start()
     {
         CurrentHealth = MaxHealth;
@@ -14,6 +16,7 @@ public class EnemyHealth : MonoBehaviour, Idamagable
 
     public void Damage(int amount)
     {
+        HasTakenDamage = true;
         CurrentHealth -= amount;
         Die();
     }
