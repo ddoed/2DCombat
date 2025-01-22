@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -9,7 +10,7 @@ public class EnemyHealth : MonoBehaviour, Idamagable
     [field:SerializeField] public int MaxHealth { get; set; } = 3;
 
     private CinemachineImpulseSource _impulseSource;
-    public ScreenShakeSO profile;
+    [SerializeField] private ScreenShakeSO profile;
 
     public bool HasTakenDamage { get; set; }
 
@@ -23,9 +24,16 @@ public class EnemyHealth : MonoBehaviour, Idamagable
     {
         HasTakenDamage = true;
         CurrentHealth -= amount;
-        //CameraShakeManager.Instance.CameraShake(_impulseSource);
         CameraShakeManager.Instance.CameraShakeFromProfile(_impulseSource, profile);
+        PlayRandomSFX();
         Die();
+    }
+
+    private void PlayRandomSFX()
+    {
+        int randomIndex = UnityEngine.Random.Range(1, 5);
+        String clipName = "hurt" + randomIndex;
+        SoundManager.Instance.PlaySFXFromString(clipName, 1f);
     }
 
     public void Die()
