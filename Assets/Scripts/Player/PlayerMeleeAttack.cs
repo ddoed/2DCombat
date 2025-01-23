@@ -35,21 +35,6 @@ public class PlayerMeleeAttack : MonoBehaviour
         attackCoolTimeCheck += Time.deltaTime;
     }
 
-    private void Attack()
-    {
-        hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0, attackableLayer);
-
-        for (int i = 0; i < hits.Length; i++)
-        {
-            Idamagable health = hits[i].collider.GetComponent<Idamagable>();
-
-            if (health != null)
-            {
-                health.Damage(damageAmount);
-            }
-        }
-    }
-
     public IEnumerator AttackAvailable()
     {
         ShouldBeDamage = true;
@@ -63,7 +48,7 @@ public class PlayerMeleeAttack : MonoBehaviour
 
                 if (enemyHealth != null && !enemyHealth.HasTakenDamage)
                 {
-                    enemyHealth.Damage(damageAmount);
+                    enemyHealth.Damage(damageAmount, transform.right);
                     idamagables.Add(enemyHealth);
                 }
             }

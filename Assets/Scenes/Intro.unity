@@ -713,6 +713,7 @@ MonoBehaviour:
   <CurrentHealth>k__BackingField: 3
   <MaxHealth>k__BackingField: 3
   profile: {fileID: 11400000, guid: 1def466d372e99942824cd234d149d8c, type: 2}
+  _damageParticle: {fileID: 6910035129202597706, guid: 9debb415e9f81a948a99c9bdbec9fb92, type: 3}
 --- !u!61 &508708533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1094,6 +1095,7 @@ MonoBehaviour:
   <CurrentHealth>k__BackingField: 3
   <MaxHealth>k__BackingField: 3
   profile: {fileID: 11400000, guid: 1b8a9fd36ba12384ab73e5d2ad16433c, type: 2}
+  _damageParticle: {fileID: 6910035129202597706, guid: 9debb415e9f81a948a99c9bdbec9fb92, type: 3}
 --- !u!212 &596998427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1395,9 +1397,9 @@ RectTransform:
   - {fileID: 1472721080}
   m_Father: {fileID: 729285388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 272.07114, y: -34.0089}
   m_SizeDelta: {x: 544.1423, y: 68.0178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730890780
@@ -1600,7 +1602,7 @@ RectTransform:
   m_Father: {fileID: 1222110583}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1804,7 +1806,7 @@ RectTransform:
   m_Father: {fileID: 2031271479}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1955,9 +1957,9 @@ RectTransform:
   - {fileID: 96965427}
   m_Father: {fileID: 729285388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 272.07114, y: -113.08119}
   m_SizeDelta: {x: 544.1423, y: 68.0178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179618231
@@ -3170,6 +3172,7 @@ MonoBehaviour:
   <CurrentHealth>k__BackingField: 3
   <MaxHealth>k__BackingField: 3
   profile: {fileID: 11400000, guid: f77fdf8ebca2cb74ebad43cb91436a91, type: 2}
+  _damageParticle: {fileID: 6910035129202597706, guid: 9debb415e9f81a948a99c9bdbec9fb92, type: 3}
 --- !u!212 &1487313570
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3324,9 +3327,9 @@ RectTransform:
   - {fileID: 1770564105}
   m_Father: {fileID: 729285388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 272.07114, y: -192.15349}
   m_SizeDelta: {x: 544.1423, y: 68.0178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717308387
@@ -5509,7 +5512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1909024594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5627,7 +5630,7 @@ RectTransform:
   m_Father: {fileID: 2041435815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
