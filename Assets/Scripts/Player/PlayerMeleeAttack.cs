@@ -18,6 +18,8 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     public bool ShouldBeDamage { get; set; }
 
+    public float AttackCD => attackCD;
+
     private void Start()
     {
         anim = GetComponent<Animator>();

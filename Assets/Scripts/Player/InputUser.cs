@@ -15,12 +15,19 @@ public class InputUser : SingleTon<InputUser>
 
     public Action MenuOpen;
     public Action MenuClose;
+    public Action BaseAttack;
 
     protected override void Awake()
     {
         control = new Control();
         control.Movement.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         control.UI.MenuOpen.performed += UIMenuPerformed;
+        control.Attack.MeleeAttack.performed += PlayerBaseAttack;
+    }
+
+    private void PlayerBaseAttack(InputAction.CallbackContext context)
+    {
+        BaseAttack?.Invoke();
     }
 
     private void UIMenuPerformed(InputAction.CallbackContext context)
@@ -37,11 +44,7 @@ public class InputUser : SingleTon<InputUser>
         }
     }
 
-    private void Test(InputAction.CallbackContext context)
-    {
-        Debug.Log("test");
-    }
-
+    #region Unity Function
     private void OnEnable()
     {
         control.Enable();
@@ -51,4 +54,5 @@ public class InputUser : SingleTon<InputUser>
     {
         control.Disable();
     }
+    #endregion
 }
