@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: A
   IconImage: {fileID: 21300000, guid: 3cc17137106600643a2be61d49d77cfa, type: 3}
+  skillData: {fileID: 11400000, guid: 4d5c9b23e82536d4fb25b621b7814140, type: 2}

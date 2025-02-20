@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d38f889a98bdfc4aa65a36b20de3401, type: 3}
-  m_Name: C
+  m_Name: null
   m_EditorClassIdentifier: 
-  itemName: C
-  IconImage: {fileID: 21300000, guid: f8a8e237fca4c4c4fa82b98322e71b4e, type: 3}
-  skillData: {fileID: 11400000, guid: a023c0b21eae1b547928d56bc7cdb189, type: 2}
+  itemName: null
+  IconImage: {fileID: -716052799, guid: a1d063dc593cc9d468e0559c1ceb3fd4, type: 3}
+  skillData: {fileID: 0}

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Player : MonoBehaviour
 {
@@ -25,29 +26,44 @@ public class Player : MonoBehaviour
 
     private Coroutine resetTrigger;
 
+    [Header("Dash")]
+    private bool isDashing;
+    private TrailRenderer trailRenderer;
+
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+        trailRenderer = GetComponentInChildren<TrailRenderer>();
 
         DashSkill.OnSkillUsed += Dashing;
     }
     private void Update()
     {
+        if (isDashing) return;
         Move();
         Jump();
     }
 
-    private void Dashing()
+    private void Dashing(float DashPower, float DashTime)
     {
-        StartCoroutine(DashEnable());
+        StartCoroutine(DashEnable(DashPower, DashTime));
     }
 
-    private IEnumerator DashEnable()
+    private IEnumerator DashEnable(float DashPower, float DashTime)
     {
-        Debug.Log("대쉬 사용");
-        yield return null;
+        float faceValue = isFacingRight ? 1 : -1;
+        isDashing = true;
+        float originGravity = rigid.gravityScale;
+        rigid.gravityScale = 0;
+        rigid.velocity = new Vector2(faceValue * DashPower, 0);
+        trailRenderer.emitting = true;
+
+        yield return new WaitForSeconds(DashTime);
+        rigid.gravityScale = originGravity;
+        isDashing = false;
+        trailRenderer.emitting = false;
     }
 
     private void Jump()

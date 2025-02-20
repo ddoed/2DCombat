@@ -18,7 +18,7 @@ public class Storage : MonoBehaviour
         SetSlot();
     }
 
-    private void SetSlot()
+    public virtual void SetSlot()
     {
         for (int i = 0; i < slots.Count; i++)
         {
