@@ -41,21 +41,21 @@ public class Storage : MonoBehaviour
         else // 실제 swap 로직
         {
             Storage storage1 = swapUISlot.GetStorage();
-            int index1 = GetItemIndex(swapUISlot);
-            Item item1 = GetItem(index1);
+            int index1 = storage1.GetItemIndex(swapUISlot);
+            Item item1 = storage1.GetItem(index1);
 
             Storage storage2 = otherSlot.GetStorage();
-            int index2 = GetItemIndex(swapUISlot);
-            Item item2 = GetItem(index2);
+            int index2 = storage2.GetItemIndex(otherSlot);
+            Item item2 = storage2.GetItem(index2);
 
-            if (!staticStorage)
+            if (!storage1.staticStorage)
             {
                 storage1.SetItemSlot(index1, item2);
                 swapUISlot.UpdateUI(item2);
             }
-            if (!staticStorage)
+            if (!storage2.staticStorage)
             {
-                storage1.SetItemSlot(index2, item1);
+                storage2.SetItemSlot(index2, item1);
                 otherSlot.UpdateUI(item1);
             }
 

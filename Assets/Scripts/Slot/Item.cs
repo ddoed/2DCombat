@@ -7,7 +7,6 @@ public class Item : ScriptableObject
 {
     public string itemName;
     public Sprite IconImage;
-
-    // skill 커스텀 클래스 SpellStrategy
+    public BaseStrategy skillData;
 
 }
